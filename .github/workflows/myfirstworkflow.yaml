@@ -1,0 +1,21 @@
+name: First Workflow
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  konstruction:
+    name: first job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step one
+        checkout: actions/checkout@v3
+      - name: Step two
+        run: |
+          touch newfile.yaml
+          echo "I'm gonna rock and roll all night" >> newfile.yaml
+          cat newfile.yaml
+          pwd
+        
